@@ -10,5 +10,8 @@
 
     echo "Variável em contexto global x: $x <br>";
     local();
+
+    // echo "Variável em contexto global y: $y <br>";
+    
     //Chamar $y fora da função causa um erro, pois ela só existe no escopo local (dentro da função), e fora da função a variavél não existe
     
