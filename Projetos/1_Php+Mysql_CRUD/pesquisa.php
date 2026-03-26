@@ -68,7 +68,8 @@
                                 <td>$data_nascimento</td>
                                 <td>
                                     <a href='cadastro_edit.php?id=$cod_pessoa' class='btn btn-success'>Editar</a>
-                                    <a href='#' class='btn btn-danger'>Excluir</a>
+                                    <a href='#' class='btn btn-danger' data-bs-toggle = 'modal' data-bs-target='#modal_confirmar'
+                                    onclick=" . '"'."get_dados($cod_pessoa,'$nome')".'"'.">Excluir</a>
                         
 
                                 </td>
@@ -88,6 +89,40 @@
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="modal_confirmar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmação de Exclusão</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="excluir_script.php" method="POST">
+                    <p>Deseja realmente excluir? <b id="nome_exclusao">Nome da pessoa</b>?</p>
+                   
+            </div>
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
+                    <input type="hidden" name="id" id="cod_pessoa" value="">
+                    <input type="hidden" name="nome" id="nome_para_msg_exclusao" value="">
+                    <input type="submit" class="btn btn-danger" value="Confirmar">
+                </form> 
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function get_dados(id, nome) {
+            document.getElementById('nome_exclusao').innerHTML = nome;
+            document.getElementById('nome_para_msg_exclusao').value = nome    ;
+            document.getElementById('cod_pessoa').value = id    ;
+            
+        }
+    </script>
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

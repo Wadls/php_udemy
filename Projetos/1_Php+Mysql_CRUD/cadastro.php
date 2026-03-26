@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Enviar</button>    <!-- class= "btn btn-primary" -->
-                        <a href="index.php" class="btn btn-primary">Voltar</a>
+                        <a href="pesquisa.php" class="btn btn-primary">Voltar</a>
                     </div>
                 </form>
 
